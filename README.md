@@ -1,1 +1,4 @@
-# A-simple-neural-network
+# Single layer shallow neural network
+
+This is an implementation of a single layer neural network using the rectified linear(relu) activation function with a single output. Using object oriented programming, an NN class was created alongside two prominent methods .fit() and .plot_mse() that returned the weights, bias and mean squared error and a plot of the mean squared error against iterations respectively. 
+Gradient descent optimization algorithm was used to update weights and bias in every iterative step using the mean squared error as a loss function. The model performance was compared to that of a simple linear regression model by running both algorithms on sklearn's diabetes dataset. The NN algorithm was observed to have performed slightly better than the simple linear regression model.
