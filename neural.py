@@ -78,7 +78,7 @@ class NN():
             dW=(-2/self.xshape[0]) * sum
             lis.append(dW)
         dW_arr=np.array(lis)
-        dB=-2/x.shape[0] *(np.sum((self.y-y_pred)))
+        dB=-2/self.xshape[0] *(np.sum((self.y-y_pred)))
         return dW_arr, dB 
 
 
