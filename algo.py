@@ -40,16 +40,6 @@ class Algo():
         y_pred=np.matmul(w,trans_X) + b
         return y_pred
 
-    def relu(self,y_pred):
-        '''
-        The rectified linear activation function f(x)=max(0,x) commonly used for regression problems 
-        args: y_pred=array; predicted y values from matrix multiplication of weight matrix and transpose of X 
-        '''
-        for i in range(len(y_pred)):
-            if y_pred[i]<0:
-                y_pred[i]=0
-        return y_pred
-
     def mean_squared_error(self, y_pred):  
         '''
         Calculate mean squared error loss function
@@ -94,8 +84,7 @@ class Algo():
         lis=[]
         w,b=self.init_weight()
         for i in range(iterations):
-            y=self.create_equ(w,b)
-            y_pred=self.relu(y)
+            y_pred=self.create_equ(w,b)
             mse=self.mean_squared_error(y_pred)
             lis.append(mse)
             dW_arr, dB=self.gradient_descent(y_pred)
